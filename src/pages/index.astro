@@ -5,7 +5,13 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/png" href="favicons/favicon-96x96.png" sizes="96x96" />
+		<link rel="icon" type="image/svg+xml" href="favicons/favicon.svg" />
+		<link rel="shortcut icon" href="favicons/favicon.ico" />
+		<link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png" />
+		<meta name="apple-mobile-web-app-title" content="The Met" />
+		<link rel="manifest" href="favicons/site.webmanifest" />
+		
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<link rel="stylesheet" href="/styles.css" />
@@ -33,8 +39,13 @@
   </article>
   </div>
   <div class="flex items-center justify-center pt-6"> 
-	<button class="bg-transparent hover:bg-red-400 text-white font-semibold hover:text-white py-2 px-4 border border-red-400 hover:border-transparent rounded">
+	<button id="page" class="bg-transparent hover:bg-red-400 text-white font-semibold hover:text-white py-2 px-4 border border-red-400 hover:border-transparent rounded">
 		View our Gallery
+		<script>
+		document.getElementById('page').onclick = function() {
+			location.href = '/gallery';
+		};
+		</script>
 	  </button>
 	  </div>
 	  </div> 
