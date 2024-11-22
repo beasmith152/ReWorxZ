@@ -1,6 +1,7 @@
+<div align="center">
 <img src="https://www.marketscreener.com/static/private-issuer-squared-70PYN.png">
 
-<div align="center">
+
 
 ## Learn More about the MET Project
 
