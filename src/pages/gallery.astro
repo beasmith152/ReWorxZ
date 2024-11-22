@@ -1,7 +1,8 @@
 ---
 const objectIDsResponse = await fetch('https://collectionapi.metmuseum.org/public/collection/v1/objects');
 const objectIDsData = await objectIDsResponse.json();
-const objectIDs = objectIDsData.objectIDs.slice(436538, 436542); // Fetch first 4 object IDs for the slider
+// Use a fixed set of object IDs for consistency
+const objectIDs = [436538, 436539, 436541, 436542];
 
 const fetchObjectDetails = async (id) => {
   const response = await fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${id}`);
