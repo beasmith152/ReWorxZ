@@ -8,5 +8,5 @@ export default {
         'hero': "url('https://cdn.sanity.io/images/cctd4ker/production/f14b1cd7cd359556864db06cabd95dd8ad8c7bfa-3840x2160.jpg?w=3840&q=75&fit=clip&auto=format')"}
 		},
 	},
-	plugins: [require('@tailwindcss/typography'), require('daisyui')],
+	plugins: [require("tw-elements/plugin.cjs"), require('@tailwindcss/typography'), require('daisyui')],
 }
