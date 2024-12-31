@@ -1,5 +1,5 @@
 <div align="center">
-<img src="/images/ReWorxzLogo.png">
+<img src="https://re-worx-fw30fx91i-beas-projects-0e4c1b33.vercel.app/images/ReWorxzLogo.png">
 
 
 
