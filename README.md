@@ -1,16 +1,16 @@
 <div align="center">
-<img src="https://www.marketscreener.com/static/private-issuer-squared-70PYN.png">
+<img src="/images/ReWorxzLogo.png">
 
 
 
-## Learn More about the MET Project
+## Learn More about ReWorxZ
 
-### uses Astro, Tailwind, DaisyUI, and other extensions. 
-### Project is meant to Demonstrate my ability to use Astro, Tailwind, Daisy and more. This project also demonstrates my implementation of API using the Met Museums API data to populate the slider. 
+### RevWorxZ is a design powerhouse dedicated to crafting bold, custom racing liveries, team branding, and apparel that make a statement on and off the track. We specialize in creating striking visual identities for motorsports teams, esports leagues, car enthusiasts, and fans who live for the thrill of competition.
+
+### From designing one-of-a-kind car wraps to developing sleek, race-inspired clothing lines, RevWorxZ combines cutting-edge technology with a passion for creativity. Our work captures the speed, energy, and individuality of racing culture, delivering designs that leave a lasting impression. At RevWorxZ, we don’t just create designs—we create a lifestyle.
 
 ## Sources
 - Google Fonts (googlefonts.com)
-- MET API (https://metmuseum.github.io/)
 - Astro (https://astro.build/)
 - Tailwind (https://tailwindcss.com/)
 - Daisy UI (https://daisyui.com/)
