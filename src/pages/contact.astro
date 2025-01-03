@@ -66,7 +66,7 @@
 					  <li>
 						<a href="https://landing-page-henna-pi.vercel.app/" class="block py-2 px-3 text-yellow-600 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-950 md:p-0 dark:text-red md:dark:hover:text-red-950 dark:hover:bg-red-950 dark:hover:text-red-950 md:dark:hover:bg-transparent">My Portolio</a>
 					  </li>
-					  <li>
+                      <li>
 						<a href="/contact" class="block py-2 px-3 text-yellow-600 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-950 md:p-0 dark:text-red md:dark:hover:text-red-950 dark:hover:bg-red-950 dark:hover:text-red-950 md:dark:hover:bg-transparent">Contact</a>
 					  </li>
 					  <li>
@@ -84,69 +84,8 @@
 				</div>
 			  </nav>
 
-			  <div class="carousel w-full relative overflow-hidden">
-				<div id="slide1" class="carousel-item relative w-full">
-				  <img
-					src="/images/aston.png"
-					class="w-full" />
-				  <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-					<a href="#slide4" class="btn btn-circle">❮</a>
-					<a href="#slide2" class="btn btn-circle">❯</a>
-				  </div>
-				</div>
-				<div id="slide2" class="carousel-item relative w-full">
-				  <img
-					src="/images/Mclaren.png"
-					class="w-full" />
-				  <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-					<a href="#slide1" class="btn btn-circle">❮</a>
-					<a href="#slide3" class="btn btn-circle">❯</a>
-				  </div>
-				</div>
-				<div id="slide3" class="carousel-item relative w-full">
-				  <img
-					src="/images/RedBull.png"
-					class="w-full" />
-				  <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-					<a href="#slide2" class="btn btn-circle">❮</a>
-					<a href="#slide4" class="btn btn-circle">❯</a>
-				  </div>
-				</div>
-				<div id="slide4" class="carousel-item relative w-full">
-				  <img
-					src="/images/pruitt.png"
-					class="w-full" />
-				  <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-					<a href="#slide3" class="btn btn-circle">❮</a>
-					<a href="#slide1" class="btn btn-circle">❯</a>
-				  </div>
-				</div>
-			  </div>
-
-			  <div id="contact" class="flex items-center justify-center pt-6"> 
-				<button id="page" class="bg-transparent hover:bg-yellow-600 text-white font-semibold hover:text-white py-2 px-4 border border-yellow-600 hover:border-transparent rounded">
-					Contact Us for Development
-					<script>
-					document.getElementById('page').onclick = function() {
-						location.href = '/contact';
-					};
-					</script>
-				  </button>
-				  </div>
-  
+			
 	
 </div>
 	</body>
 </html>
-
-<style>
-	/* Add this style block to your gallery.astro file */
-	@media (max-width: 768px) {
-	  .carousel {
-		padding-top: 4em; /* Adjust the padding value as needed */
-	  }
-	}
-	@media (min-width: 768px) {
-	  #contact {display:none;}
-	  }
-  </style>
