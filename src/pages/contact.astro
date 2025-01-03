@@ -63,12 +63,13 @@
 					  <li>
 						<a href="/gallery" class="block py-2 px-3 text-yellow-600 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-950 md:p-0 dark:text-red md:dark:hover:text-red-950 dark:hover:bg-red-950 dark:hover:text-red-950 md:dark:hover:bg-transparent">Our Gallery</a>
 					  </li>
-					  <li>
-						<a href="https://landing-page-henna-pi.vercel.app/" class="block py-2 px-3 text-yellow-600 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-950 md:p-0 dark:text-red md:dark:hover:text-red-950 dark:hover:bg-red-950 dark:hover:text-red-950 md:dark:hover:bg-transparent">My Portolio</a>
-					  </li>
                       <li>
 						<a href="/contact" class="block py-2 px-3 text-yellow-600 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-950 md:p-0 dark:text-red md:dark:hover:text-red-950 dark:hover:bg-red-950 dark:hover:text-red-950 md:dark:hover:bg-transparent">Contact</a>
 					  </li>
+					  <li>
+						<a href="https://landing-page-henna-pi.vercel.app/" class="block py-2 px-3 text-yellow-600 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-950 md:p-0 dark:text-red md:dark:hover:text-red-950 dark:hover:bg-red-950 dark:hover:text-red-950 md:dark:hover:bg-transparent">My Portolio</a>
+					  </li>
+                     
 					  <li>
 						<div style="margin-top:-10px;"class="ec-cart-widget block py-0 pt-0 px-3 text-yellow-600 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-950 md:p-0 dark:text-red md:dark:hover:text-red-950 dark:hover:bg-red-950 dark:hover:text-red-950 md:dark:hover:bg-transparent"></div>
 						<div>
@@ -83,8 +84,28 @@
 				  </div>
 				</div>
 			  </nav>
-
-			
+              <div class="pt-12">
+              <div class="card lg:card-side bg-base-100 shadow-xl">
+                <figure>
+                  <img class="size-96"
+                    src="/images/self.JPG"
+                    alt="Album" />
+                </figure>
+                <div class="card-body">
+                  <h1 class="card-title text-2xl text-white">Contact Me</h2>
+                  <p class="text-yellow-500"><a href="mailto:reworxzdesign@gmail.com">Email me @ reworxzdesign@gmail.com
+                    </a></p>
+                  <div class="card-actions justify-end">
+                    <button id="page" class="bg-transparent hover:bg-yellow-600 text-white font-semibold hover:text-white py-2 px-4 border border-yellow-600 hover:border-transparent rounded">Shop</button>
+                    <script>
+                        document.getElementById('page').onclick = function() {
+                            location.href = '/shop';
+                        };
+                        </script>
+                  </div>
+                </div>
+              </div>
+			</div>
 	
 </div>
 	</body>
