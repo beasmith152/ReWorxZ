@@ -75,6 +75,8 @@
 }
 
 .glitch-text {
+    font-family: "New Rocker", system-ui;
+    font-size: 5em;
     font-weight: bold;
     position: relative;
     color: #fff;
