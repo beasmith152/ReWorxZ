@@ -5,7 +5,7 @@ export default {
 		extend: {
 			fontFamily:{chonburi: ['Chonburi', 'sans-serif']},
 			backgroundImage: {
-        'hero': "url('https://youtu.be/6NImgmZKLfo')"}
+        'hero': "url('https://i.giphy.com/eNMmoy5ZIa2vyoIjza.webp')"}
 		},
 	},
 	plugins: [require("tw-elements/plugin.cjs"), require('@tailwindcss/typography'), require('daisyui')],
