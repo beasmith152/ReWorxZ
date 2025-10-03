@@ -54,3 +54,15 @@
   width: 100%;
   filter: drop-shadow(0 0 23px var(--animation-color))
 }
+
+.new-rocker-regular {
+  font-family: "New Rocker", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#herotext {
+  font-family: "New Rocker", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
