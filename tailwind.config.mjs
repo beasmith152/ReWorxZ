@@ -11,3 +11,4 @@ export default {
 	},
 	plugins: [require("tw-elements/plugin.cjs"), require('@tailwindcss/typography'), require('daisyui')],
 }
+}
