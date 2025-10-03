@@ -1,5 +1,5 @@
 .animate-fadeIn {
-  animation: fadeIn 1.2s ease-in;
+  animation: fadeIn 2ms ease-in;
 }
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(30px); }
