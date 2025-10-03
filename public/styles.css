@@ -1,3 +1,11 @@
+# Fade-in animation
+.animate-fadeIn {
+  animation: fadeIn 1.2s ease-in;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 @import url('https://fonts.googleapis.com/css2?family=New+Rocker&display=swap');
 
 @tailwind base;
