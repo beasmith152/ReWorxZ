@@ -35,8 +35,10 @@
   </article>
   </div>
   <div class="flex items-center justify-center pt-6"> 
-	<button id="page" class="bg-transparent hover:bg-yellow-600/20 text-white font-semibold hover:text-white py-2 px-4 border border-yellow-600/20 hover:border-transparent rounded transition-all duration-300 transform scale-100 hover:scale-110">
-		Welcome
+	<button class="button" data-text="Awesome">
+    <span class="actual-text">&nbsp;Let's go&nbsp;</span>
+    <span aria-hidden="true" class="hover-text">&nbsp;Let's go&nbsp;</span>
+		
 		<script>
 		document.getElementById('page').onclick = function() {
 			location.href = '/about';
