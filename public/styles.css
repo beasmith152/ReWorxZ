@@ -9,6 +9,14 @@
   padding: 0;
   border: none;
   cursor: pointer;
+  display: inline-block;
+}
+
+.actual-text, .hover-text {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  position: relative;
 }
 
 /* button styling */
