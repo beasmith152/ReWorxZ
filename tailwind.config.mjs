@@ -5,7 +5,7 @@ export default {
 		extend: {
 			fontFamily:{chonburi: ['Chonburi', 'sans-serif']},
 			backgroundImage: {
-        'hero': "url('https://www.onelargeprawn.co.za/wp-content/uploads/2014/11/orbo_perfect_loop_6.gif')"}
+        'hero': "url('https://i.giphy.com/eNMmoy5ZIa2vyoIjza.webp')"}
 		},
 	},
 	plugins: [require("tw-elements/plugin.cjs"), require('@tailwindcss/typography'), require('daisyui')],
