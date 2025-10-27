@@ -87,26 +87,31 @@
 
 			  <div class="carousel w-full relative overflow-hidden">
 				  <!-- Slide 1 content -->
-				  <div id="slide1" class="carousel-item relative w-full">
-					<img
-					  src="/images/base.png" 
-					  class="w-full h-relative pt-6" />
-					  <img
-					  src="/images/Camaro Cut File.png" 
-					  class="w-full h-relative pt-6" />
-					  <img
-					  src="/images/Camaro.jpg" 
-					  class="w-full h-relative pt-6" />
-					<div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-					  <a href="#slide2" class="btn btn-circle">❮</a>
-					  <a href="#slide2" class="btn btn-circle">❯</a>
-					</div>
-				</div>
+								<div id="slide1" class="carousel-item relative w-full">
+									<!-- Stack images vertically using a flex column -->
+									<div class="flex flex-col space-y-6 pt-6 items-center">
+										<img src="/images/base.png" class="w-full max-w-screen-lg" />
+										<img src="/images/Camaro Cut File.png" class="w-full max-w-screen-lg" />
+										<img src="/images/Camaro.jpg" class="w-full max-w-screen-lg" />
+									</div>
+									<div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+										<a href="#slide2" class="btn btn-circle">❮</a>
+										<a href="#slide2" class="btn btn-circle">❯</a>
+									</div>
+								</div>
 				<!--Slide 2 content -->
 				<div id="slide2" class="carousel-item relative w-full justify-center pt-6">
 				
 					<div class="sketchfab-embed-wrapper justify-center"> 
-						<iframe title="Livery Mockup ATSV" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="1080" height="720" src="https://sketchfab.com/models/c0856e18d9fa4d0db9f5b3ea3b27a4a5/embed?autostart=1&preload=1"> </iframe> 
+											<iframe
+												title="Livery Mockup ATSV"
+												  frameborder="0"
+												  allowfullscreen
+												allow="autoplay; fullscreen; web-share"
+												width="1080"
+												height="720"
+												src="https://sketchfab.com/models/c0856e18d9fa4d0db9f5b3ea3b27a4a5/embed?autostart=1&preload=1">
+											</iframe>
 					</div>
 				
 					<div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
