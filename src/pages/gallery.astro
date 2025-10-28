@@ -154,6 +154,18 @@
 	  .carousel {
 		padding-top: 4em; /* Adjust the padding value as needed */
 	  }
+
+	  /* On small screens, only show the active slide to prevent overlapping.
+	     Slides are selected by URL hash (:target). When no hash is present,
+	     show the first slide as a sensible default. This keeps desktop
+	     behaviour unchanged and fixes mobile overlap. */
+	  .carousel-item { display: none; }
+	  .carousel-item:target { display: block; }
+	  /* If there's no hash, show the first slide */
+	  .carousel-item:first-of-type { display: block; }
+
+	  /* Ensure images stack cleanly and don't overlap */
+	  .carousel-item img { display:block; width:100%; height:auto; }
 	}
 	@media (min-width: 768px) {
 	  #contact {display:none;}
