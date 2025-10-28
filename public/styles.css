@@ -75,10 +75,13 @@
 }
 
 #cmr {
-  font-family: "hubot sans", system-ui;
+  text-align: center;
+   font-family: "Hubot Sans", sans-serif;
+  font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  text-align: center;
+  font-variation-settings:
+    "wdth" 100;
 }
 
 .glitch-text {
