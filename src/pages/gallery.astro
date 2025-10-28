@@ -90,6 +90,11 @@
 										<p id="cmr" class="text-slate-100 text-2xl mb-0">"Precision comes in every layer. From Design, Production and Installation.</p>
 										<img src="/images/Camaro Cut File.png" class="w-full max-w-screen-lg" />
 										<p id="cmr" class="text-white text-1xl mb-0">Let's start your project, where Performance meets Purpose.</p>
+										<div id="contact" class="flex items-center justify-center pt-8 pb-6"> 
+				<button id="page" class="bg-transparent hover:bg-yellow-600 text-white font-semibold hover:text-white py-2 px-4 border border-yellow-600 hover:border-transparent rounded">
+					Contact Us for Development
+				  </button>
+				  </div>
 									</div>
 									<!-- 
 									<div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
@@ -117,6 +122,11 @@
 												src="https://sketchfab.com/models/c0856e18d9fa4d0db9f5b3ea3b27a4a5/embed?autostart=1&preload=1">
 											</iframe>
 												<p id="cmr" class="text-slate-100 text-2xl mb-0">Finished Product coming soon. 12/12/25 </p>
+												<div id="contact" class="flex items-center justify-center pt-8 pb-6"> 
+				<button id="page" class="bg-transparent hover:bg-yellow-600 text-white font-semibold hover:text-white py-2 px-4 border border-yellow-600 hover:border-transparent rounded">
+					Contact Us for Development
+				  </button>
+				  </div>
 					</div>
 <!-- 
 					<div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
@@ -141,65 +151,12 @@
 								})();
 							</script>
 
-							<div id="contact" class="flex items-center justify-center pt-8 pb-6"> 
-						<button id="page" class="bg-transparent hover:bg-yellow-600 text-white font-semibold hover:text-white py-2 px-4 border border-yellow-600 hover:border-transparent rounded">
-								Contact Us for Development
-								<script>
-								document.getElementById('page').onclick = function() {
-									location.href = '/contact';
-								};
-								</script>
-						  </button>
-						  </div>
-
-						  <script>
-						  (function(){
-							const contact = document.getElementById('contact');
-							if (!contact) return;
-							const GAP = 16; // px gap between slide bottom and contact button on desktop
-
-							function resetContact(){
-							  contact.style.position = '';
-							  contact.style.left = '';
-							  contact.style.transform = '';
-							  contact.style.top = '';
-							  contact.style.zIndex = '';
-							}
-
-							function positionContact(){
-							  // only run on desktop widths
-							  if (!window.matchMedia('(min-width: 768px)').matches) {
-								resetContact();
-								return;
-							  }
-
-							  // determine active slide via hash or default to first
-							  const hash = (location.hash || '').replace('#','');
-							  let active = hash ? document.getElementById(hash) : null;
-							  if (!active || !active.classList.contains('carousel-item')){
-								active = document.querySelector('.carousel-item');
-							  }
-							  if (!active) return;
-
-							  const rect = active.getBoundingClientRect();
-							  const topPx = rect.bottom + window.pageYOffset + GAP;
-
-							  // position the contact centered below the active slide
-							  contact.style.position = 'absolute';
-							  contact.style.left = '50%';
-							  contact.style.transform = 'translateX(-50%)';
-							  contact.style.top = topPx + 'px';
-							  contact.style.zIndex = '40';
-							}
-
-							window.addEventListener('resize', positionContact);
-							window.addEventListener('hashchange', positionContact);
-							document.addEventListener('DOMContentLoaded', positionContact);
-							// run once immediately in case DOMContentLoaded already fired
-							positionContact();
-						  })();
-						  </script>
-  
+							
+  <script>
+					document.getElementById('page').onclick = function() {
+						location.href = '/contact';
+					};
+					</script>
 	
 </div>
 	</body>
@@ -226,6 +183,6 @@
 	}
 	@media (min-width: 768px) {
 	  #contact {
-	
+	padding-bottom: 2em;
 	  }
   </style>
