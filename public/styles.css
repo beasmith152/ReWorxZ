@@ -5,7 +5,7 @@
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
-@import url('https://fonts.googleapis.com/css2?family=New+Rocker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=New+Rocker&family=Racing+Sans+One&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -72,6 +72,13 @@
   font-family: "New Rocker", system-ui;
   font-weight: 400;
   font-style: normal;
+}
+
+#cmr {
+  font-family: "Racing Sans One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
 }
 
 .glitch-text {
