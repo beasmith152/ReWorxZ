@@ -87,10 +87,7 @@
 										<img src="/images/base.png" class="w-full max-w-screen-lg" />
 										<img src="/images/Camaro Cut File.png" class="w-full max-w-screen-lg" />
 									</div>
-									<div class="fixed left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-										<a href="#slide2" class="btn btn-circle">❮</a>
-										<a href="#slide2" class="btn btn-circle">❯</a>
-									</div>
+									<!-- slide-level nav removed; using persistent fixed controls -->
 								</div>
 				<!--Slide 2 content -->
 				<div id="slide2" class="carousel-item relative w-full justify-center pt-6">
@@ -109,12 +106,48 @@
 											</iframe>
 					</div>
 				
-					<div class="fixed left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-					  <a href="#slide1" class="btn btn-circle">❮</a>
-					  <a href="#slide1" class="btn btn-circle">❯</a>
-					</div>
+										<!-- slide-level nav removed; using persistent fixed controls -->
 				  </div>
 			  </div>
+
+			  <!-- Persistent fixed next/prev buttons anchored to viewport edges -->
+				<a id="carousel-prev" href="#" aria-label="Previous slide" class="fixed left-6 top-1/2 transform -translate-y-1/2 z-50 btn btn-circle">❮</a>
+				<a id="carousel-next" href="#" aria-label="Next slide" class="fixed right-6 top-1/2 transform -translate-y-1/2 z-50 btn btn-circle">❯</a>
+
+				<script>
+				  (function(){
+					const prevBtn = document.getElementById('carousel-prev');
+					const nextBtn = document.getElementById('carousel-next');
+					// collect all slides by id in document order
+					const slides = Array.from(document.querySelectorAll('.carousel-item')).map(el => el.id).filter(Boolean);
+					if (!slides.length) return; // nothing to do
+
+					function currentIndex(){
+					  const hash = (location.hash || '').replace('#','');
+					  const idx = slides.indexOf(hash);
+					  return idx >= 0 ? idx : 0;
+					}
+
+					function goToIndex(i){
+					  const n = slides.length;
+					  const idx = ((i % n) + n) % n; // wrap
+					  location.hash = '#' + slides[idx];
+					}
+
+					prevBtn.addEventListener('click', function(e){
+					  e.preventDefault();
+					  goToIndex(currentIndex() - 1);
+					});
+
+					nextBtn.addEventListener('click', function(e){
+					  e.preventDefault();
+					  goToIndex(currentIndex() + 1);
+					});
+
+					// If there's no hash on load, set it to the first slide so buttons behave predictably
+					if(!location.hash && slides.length) location.hash = '#' + slides[0];
+				  })();
+				</script>
 
 			  <div id="contact" class="flex items-center justify-center pt-6"> 
 				<button id="page" class="bg-transparent hover:bg-yellow-600 text-white font-semibold hover:text-white py-2 px-4 border border-yellow-600 hover:border-transparent rounded">
