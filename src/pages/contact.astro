@@ -77,24 +77,43 @@
 				</div>
 			  </nav>
               <div class="pt-12">
-              <div class="card lg:card-side bg-base-100 shadow-xl">
-                <figure>
-                  <img class="size-96"
-                    src="/images/self.JPG"
-                    alt="Album" />
-                </figure>
-                <div class="card-body">
-                  <h1 id="cnt" class="card-title text-2xl text-black">Contact Bea S. - Founder of ReWorxZ Designs</h1>
-                  <p class="text-yellow-500"><a href="mailto:reworxzdesign@gmail.com">Email me @ reworxzdesign@gmail.com
-                    </a></p>
-                  <div class="card-actions justify-end">
-                    <button id="page3" class="bg-transparent hover:bg-yellow-600 text-black font-semibold hover:text-white py-2 px-4 border border-yellow-600 hover:border-transparent rounded">Shop</button>
-                    <script>
-                        document.getElementById('page3').onclick = function() {
-                            location.href = '/shop';
-                        };
-                        </script>
-                  </div>
+              <section class="contact-section">
+  <div class="contact-intro">
+    <h2 class="contact-title">Get in Touch</h2>
+    <p class="contact-description">
+      Fill out the form below and we'll get back to you as soon as possible.
+    </p>
+  </div>
+
+  <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+
+    <input type="hidden" name="access_key" value="685ab6f8-356b-430b-ab1e-220d1aad1b66" />
+    <input type="hidden" name="subject" value="New Contact Form Submission from Web3Forms" />
+    <input type="hidden" name="from_name" value="My Website" />
+    <!-- More custom ization options available in the docs: https://docs.web3forms.com -->
+
+    <div class="form-group-container">
+      <div class="form-group">
+        <label for="name" class="form-label">Name</label>
+        <input id="name" name="name" class="form-input" placeholder="Your name" type="text" />
+      </div>
+      <div class="form-group">
+        <label for="email" class="form-label">Email</label>
+        <input id="email" name="email" class="form-input" placeholder="Your email" type="email" />
+      </div>
+      <div class="form-group">
+        <label for="phone" class="form-label">Phone</label>
+        <input id="phone" name="phone" class="form-input" placeholder="+1 (234) 56789" type="text" />
+      </div>
+      <div class="form-group">
+        <label for="message" class="form-label">Message</label>
+        <textarea class="form-textarea" id="message" name="message" placeholder="Your message"></textarea>
+      </div>
+    </div>
+    <button class="form-submit" type="submit">Send Message</button>
+  </form>
+
+</section>
                 </div>
               </div>
 			</div>
