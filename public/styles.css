@@ -128,9 +128,13 @@
     }
 }
 // Contact Section Styles
+#contactbody{
+  display:flex;
+}
+
 #contentcont{
   margin:0 auto;
-  align-items: center;
+  justify-content: center;
 }
 .contact-section {
   width: 100%;
