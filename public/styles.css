@@ -192,7 +192,7 @@
 
 .form-input:focus-visible,
 .form-textarea:focus-visible {
-  outline: 2px solid #2563eb;
+  outline: 2px solid #ffa703;
   outline-offset: 2px;
 }
 
@@ -203,7 +203,7 @@
 .form-submit {
   width: 100%;
   margin-top: 1.2rem;
-  background-color: #3124ca;
+  background-color: #ffa703;
   color: #fff;
   padding: 13px 5px;
   border-radius: 0.375rem;
