@@ -87,29 +87,6 @@
 			  </nav>
 
 			  <div class="carousel w-full relative overflow-hidden">
-				  <!-- Slide 1 content -->
-								<div id="slide1" class="carousel-item relative w-full justify-center">
-									<!-- Stack images vertically using a flex column -->
-									<div class="flex flex-col space-y-6 pt-6 items-center">
-										<p id="cmr" class="text-white text-4xl mb-0">The Canvas: 17' Camaro RS </p>
-										<img src="/images/Camaro.jpg" class="w-full max-w-screen-lg" />
-										<p id="cmr" class="text-slate-300 text-2xl mb-0">"Every masterpiece starts with a blank slate. At R.W.Z, we turn ideas into reality."</p>
-										<img src="/images/base.png" class="w-full max-w-screen-lg" />
-										<p id="cmr" class="text-slate-300 text-2xl mb-0">"Precision comes in every layer. From Design, Production and Installation.</p>
-										<img src="/images/Camaro Cut File.png" class="w-full max-w-screen-lg" />
-										<p id="cmr" class="text-white text-1xl mb-0">Let's start your project, where Performance meets Purpose.</p>
-										<div id="contact" class="flex items-center justify-center pt-1 pb-6"> 
-				<button id="page" class="bg-transparent hover:bg-yellow-600 text-white font-semibold hover:text-white py-2 px-4 border border-yellow-600 hover:border-transparent rounded">
-					Contact Us for Development
-				  </button>
-				  </div>
-									</div>
-									<!-- 
-									<div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-										<a href="#slide2" class="btn btn-circle">❮</a>
-										<a href="#slide2" class="btn btn-circle">❯</a>
-									</div> -->
-								</div>
 				<!--Slide 2 content -->
 				<div id="slide2" class="carousel-item relative w-full justify-center pt-6">
 					<div class="sketchfab-embed-wrapper flex flex-col space-y-6 pt-6 items-center"> 
@@ -144,20 +121,7 @@
 				  </div>
 							</div>
 
-							<!-- Persistent fixed next/prev buttons anchored to viewport edges -->
-							<a id="carousel-prev" href="#" aria-label="Previous slide" class="fixed left-6 top-1/2 transform -translate-y-1/2 z-50 btn btn-circle">❮</a>
-							<a id="carousel-next" href="#" aria-label="Next slide" class="fixed right-6 top-1/2 transform -translate-y-1/2 z-50 btn btn-circle">❯</a>
-
-							<script>
-								// Simple carousel hash toggler for two slides. Adjust logic if you add more slides.
-								(function(){
-									const prev = document.getElementById('carousel-prev');
-									const next = document.getElementById('carousel-next');
-									function goTo(hash) { location.hash = hash; }
-									prev.addEventListener('click', function(e){ e.preventDefault(); if(location.hash === '#slide1') goTo('#slide2'); else goTo('#slide1'); });
-									next.addEventListener('click', function(e){ e.preventDefault(); if(location.hash === '#slide1') goTo('#slide2'); else goTo('#slide1'); });
-								})();
-							</script>
+							
 
 							
   					<script>
