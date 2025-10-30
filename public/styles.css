@@ -130,6 +130,7 @@
 // Contact Section Styles
 #contentcont{
   margin:0 auto;
+  align-items: center;
 }
 .contact-section {
   width: 100%;
