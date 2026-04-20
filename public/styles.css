@@ -226,41 +226,97 @@
 	background-image: url("/images/noise.png");
 	background-repeat: repeat;
 	background-size: 220px 220px;
-	opacity: 0.12;
-	mix-blend-mode: soft-light;
-	animation: noiseShift 0.22s steps(2) infinite, noiseFlicker 3s linear infinite;
+	opacity: 0.14;
+	mix-blend-mode: overlay;
+	animation:
+		noiseFloat 12s ease-in-out infinite alternate,
+		noiseFlicker 6s ease-in-out infinite;
+	will-change: transform, opacity;
+}
+
+.noise-overlay-2 {
+	background-image: url("/images/noise.png");
+	background-repeat: repeat;
+	background-size: 320px 320px;
+	opacity: 0.07;
+	mix-blend-mode: screen;
+	filter: blur(1px);
+	animation: noiseFloatAlt 18s ease-in-out infinite alternate;
+	will-change: transform, opacity;
 }
 
 .scanlines {
 	background-image: repeating-linear-gradient(
 		to bottom,
-		rgba(255, 255, 255, 0.03) 0px,
-		rgba(255, 255, 255, 0.03) 1px,
+		rgba(255, 255, 255, 0.025) 0px,
+		rgba(255, 255, 255, 0.025) 1px,
 		transparent 2px,
 		transparent 4px
 	);
-	opacity: 0.08;
+	opacity: 0.06;
 	mix-blend-mode: soft-light;
+	pointer-events: none;
 }
 
-@keyframes noiseShift {
-	0%   { transform: translate(0, 0); }
-	25%  { transform: translate(-1%, 1%); }
-	50%  { transform: translate(1%, -1%); }
-	75%  { transform: translate(-0.5%, 0.5%); }
-	100% { transform: translate(0, 0); }
+@keyframes noiseFloat {
+	0% {
+		transform: translate3d(0%, 0%, 0) scale(1);
+	}
+	20% {
+		transform: translate3d(-1%, 0.5%, 0) scale(1.02);
+	}
+	40% {
+		transform: translate3d(0.75%, -0.75%, 0) scale(1.01);
+	}
+	60% {
+		transform: translate3d(-0.5%, 1%, 0) scale(1.03);
+	}
+	80% {
+		transform: translate3d(1%, 0.25%, 0) scale(1.015);
+	}
+	100% {
+		transform: translate3d(-0.75%, -0.5%, 0) scale(1.02);
+	}
+}
+
+@keyframes noiseFloatAlt {
+	0% {
+		transform: translate3d(0%, 0%, 0) scale(1.04);
+	}
+	25% {
+		transform: translate3d(1%, -0.5%, 0) scale(1.06);
+	}
+	50% {
+		transform: translate3d(-1%, 1%, 0) scale(1.03);
+	}
+	75% {
+		transform: translate3d(0.5%, 1.25%, 0) scale(1.05);
+	}
+	100% {
+		transform: translate3d(-0.75%, -1%, 0) scale(1.04);
+	}
 }
 
 @keyframes noiseFlicker {
-	0%   { opacity: 0.10; }
-	10%  { opacity: 0.13; }
-	20%  { opacity: 0.11; }
-	30%  { opacity: 0.14; }
-	40%  { opacity: 0.09; }
-	50%  { opacity: 0.12; }
-	60%  { opacity: 0.10; }
-	70%  { opacity: 0.13; }
-	80%  { opacity: 0.11; }
-	90%  { opacity: 0.14; }
-	100% { opacity: 0.10; }
+	0% {
+		opacity: 0.12;
+	}
+	15% {
+		opacity: 0.145;
+	}
+	30% {
+		opacity: 0.13;
+	}
+	45% {
+		opacity: 0.155;
+	}
+	60% {
+		opacity: 0.125;
+	}
+	75% {
+		opacity: 0.15;
+	}
+	100% {
+		opacity: 0.12;
+	}
 }
