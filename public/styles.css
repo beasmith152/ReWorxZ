@@ -27,10 +27,12 @@
 }
 
 .actual-text, .hover-text {
-  display: inline-block;
+  display: block;
   width: 100%;
   text-align: center;
   position: relative;
+  line-height: 1.2;
+  white-space: normal;
 }
 
 /* button styling */
