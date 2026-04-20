@@ -19,6 +19,7 @@
   border: none;
   cursor: pointer;
   display: inline-block;
+  margin-bottom: 1rem;
 }
 
 .actual-text, .hover-text {
