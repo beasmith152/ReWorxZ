@@ -23,24 +23,19 @@
 		<title>Welcome</title>
 	</head>
 	<body class="bg-[#f3efdb] h-screen">
-		<div class="bg-hero1 bg-cover  h-full">
-		<div class="flex items-center justify-center pt-20 "> 
-			<img class="" src="/images/ReKatLogo.png" />
-
-	</div>
-  <div class="flex items-center justify-center pb-20"> 
-	<button id="page" class="button" data-text="Awesome">
-    <span class="actual-text">&nbsp; 努力は夢中に勝てない。 &nbsp;</span>
-    <span aria-hidden="true" class="hover-text"> 努力は夢中に勝てない。 </span>
-		
+		<div class="bg-hero1 bg-cover h-full">
+			<div class="flex flex-col items-center justify-center h-full gap-2">
+				<img class="" src="/images/ReKatLogo.png" />
+				<button id="page" class="button" data-text="Awesome">
+					<span class="actual-text">&nbsp; 努力は夢中に勝てない。 &nbsp;</span>
+					<span aria-hidden="true" class="hover-text"> 努力は夢中に勝てない。 </span>
+				</button>
+			</div>
 		<script>
 		document.getElementById('page').onclick = function() {
 			location.href = '/about';
 		};
-		</script>
-	  </button>
-	  </div>
-	  </div> 
+		</script>		</div> 
 
 	</body>
 </html>
