@@ -22,6 +22,10 @@
   margin-bottom: 10rem;
 }
 
+.indexlogo{
+  margin-top: 8rem;
+}
+
 .actual-text, .hover-text {
   display: inline-block;
   width: 100%;
