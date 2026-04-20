@@ -19,6 +19,9 @@
   border: none;
   cursor: pointer;
   display: block;
+  width: min(92vw, 40rem);
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 10rem;
   text-align: center;
 }
@@ -34,6 +37,7 @@
   position: relative;
   line-height: 1.2;
   white-space: normal;
+  text-wrap: balance;
 }
 
 /* button styling */
