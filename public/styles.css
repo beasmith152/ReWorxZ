@@ -43,8 +43,8 @@
 /* button styling */
 .button {
   --border-right: 6px;
-  --text-stroke-color: rgba(22, 19, 19, 0.832);
-  --animation-color: #660e12;
+  --text-color: rgba(255, 255, 255, 0.832);
+  --animation-color: #f5000c;
   --fs-size: 2em;
   letter-spacing: 3px;
   text-decoration: none;
@@ -53,7 +53,7 @@
   position: relative;
   text-transform: uppercase;
   color: transparent;
-  -webkit-text-stroke: 1px var(--text-stroke-color);
+  -webkit-text-stroke: 1px var(--text-color);
 }
 /* this is the text, when you hover on button */
 .hover-text {
