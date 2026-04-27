@@ -125,12 +125,44 @@
 					</div>
 				</div>
 
-				<div class="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
-					<img src="/images/aboutme.png" alt="Portfolio preview 1" class="aspect-[4/3] w-full object-cover" />
-					<img src="/images/aboutme.png" alt="Portfolio preview 2" class="aspect-[4/3] w-full object-cover" />
-					<img src="/images/aboutme.png" alt="Portfolio preview 3" class="aspect-[4/3] w-full object-cover" />
-					<img src="/images/aboutme.png" alt="Portfolio preview 4" class="aspect-[4/3] w-full object-cover" />
-					<img src="/images/aboutme.png" alt="Portfolio preview 5" class="aspect-[4/3] w-full object-cover" />
+				<div class="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5" id="galleryGrid">
+					<img src="/images/aboutme.png" alt="Portfolio preview 1" class="aspect-[4/3] w-full object-cover cursor-pointer hover:opacity-80 transition-opacity" data-index="0" />
+					<img src="/images/aboutme.png" alt="Portfolio preview 2" class="aspect-[4/3] w-full object-cover cursor-pointer hover:opacity-80 transition-opacity" data-index="1" />
+					<img src="/images/aboutme.png" alt="Portfolio preview 3" class="aspect-[4/3] w-full object-cover cursor-pointer hover:opacity-80 transition-opacity" data-index="2" />
+					<img src="/images/aboutme.png" alt="Portfolio preview 4" class="aspect-[4/3] w-full object-cover cursor-pointer hover:opacity-80 transition-opacity" data-index="3" />
+					<img src="/images/aboutme.png" alt="Portfolio preview 5" class="aspect-[4/3] w-full object-cover cursor-pointer hover:opacity-80 transition-opacity" data-index="4" />
+				</div>
+
+				<!-- Lightbox Modal -->
+				<div id="lightboxModal" class="hidden fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4">
+					<div class="relative w-full max-w-4xl flex flex-col items-center">
+						<!-- Close Button -->
+						<button id="closeModal" class="absolute top-0 right-0 text-white text-3xl hover:text-yellow-600 transition z-10" aria-label="Close lightbox">
+							×
+						</button>
+
+						<!-- Image Container -->
+						<img id="lightboxImage" src="" alt="Full size image" class="w-full h-auto max-h-[80vh] object-contain" />
+
+						<!-- Navigation Arrows -->
+						<div class="absolute inset-0 flex items-center justify-between pointer-events-none">
+							<button id="prevBtn" class="pointer-events-auto ml-4 bg-white/20 hover:bg-white/40 text-white rounded-full p-3 transition-colors" aria-label="Previous image">
+								<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+								</svg>
+							</button>
+							<button id="nextBtn" class="pointer-events-auto mr-4 bg-white/20 hover:bg-white/40 text-white rounded-full p-3 transition-colors" aria-label="Next image">
+								<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+								</svg>
+							</button>
+						</div>
+
+						<!-- Image Counter -->
+						<div class="mt-4 text-white text-center font-[Hubot_Sans] uppercase tracking-[0.2em]">
+							<span id="imageCounter">1</span> / <span id="totalImages">5</span>
+						</div>
+					</div>
 				</div>
 			</section>
 	<div id="contact" class="flex items-center justify-center pt-1 pb-6"> 
@@ -149,6 +181,70 @@
 							
 	
 </div>
+		<script>
+			// Lightbox functionality
+			const galleryImages = document.querySelectorAll('#galleryGrid img');
+			const lightboxModal = document.getElementById('lightboxModal');
+			const lightboxImage = document.getElementById('lightboxImage');
+			const closeModal = document.getElementById('closeModal');
+			const prevBtn = document.getElementById('prevBtn');
+			const nextBtn = document.getElementById('nextBtn');
+			const imageCounter = document.getElementById('imageCounter');
+			const totalImages = document.getElementById('totalImages');
+
+			let currentIndex = 0;
+			const images = Array.from(galleryImages).map(img => img.src);
+			totalImages.textContent = images.length;
+
+			// Open lightbox on image click
+			galleryImages.forEach((img) => {
+				img.addEventListener('click', (e) => {
+					currentIndex = parseInt(e.target.getAttribute('data-index'));
+					showImage(currentIndex);
+					lightboxModal.classList.remove('hidden');
+				});
+			});
+
+			// Close modal
+			closeModal.addEventListener('click', closeLightbox);
+			lightboxModal.addEventListener('click', (e) => {
+				if (e.target === lightboxModal) closeLightbox();
+			});
+
+			// Navigation
+			prevBtn.addEventListener('click', () => {
+				currentIndex = (currentIndex - 1 + images.length) % images.length;
+				showImage(currentIndex);
+			});
+
+			nextBtn.addEventListener('click', () => {
+				currentIndex = (currentIndex + 1) % images.length;
+				showImage(currentIndex);
+			});
+
+			// Keyboard navigation
+			document.addEventListener('keydown', (e) => {
+				if (lightboxModal.classList.contains('hidden')) return;
+				if (e.key === 'ArrowLeft') {
+					currentIndex = (currentIndex - 1 + images.length) % images.length;
+					showImage(currentIndex);
+				} else if (e.key === 'ArrowRight') {
+					currentIndex = (currentIndex + 1) % images.length;
+					showImage(currentIndex);
+				} else if (e.key === 'Escape') {
+					closeLightbox();
+				}
+			});
+
+			function showImage(index) {
+				lightboxImage.src = images[index];
+				imageCounter.textContent = index + 1;
+			}
+
+			function closeLightbox() {
+				lightboxModal.classList.add('hidden');
+			}
+		</script>
 	</body>
 	<style>
 	
