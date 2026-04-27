@@ -125,13 +125,33 @@
 					</div>
 				</div>
 
-				<div class="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5" id="galleryGrid">
-					<img src="/images/tat1.png" alt="Portfolio preview 1" class="aspect-[4/3] w-full object-cover cursor-pointer hover:opacity-80 transition-opacity" data-index="0" />
-					<img src="/images/tat2.png" alt="Portfolio preview 2" class="aspect-[4/3] w-full object-cover cursor-pointer hover:opacity-80 transition-opacity" data-index="1" />
-					<img src="/images/tat3.png" alt="Portfolio preview 3" class="aspect-[4/3] w-full object-cover cursor-pointer hover:opacity-80 transition-opacity" data-index="2" />
-					<img src="/images/tat4.png" alt="Portfolio preview 4" class="aspect-[4/3] w-full object-cover cursor-pointer hover:opacity-80 transition-opacity" data-index="3" />
-					<img src="/images/tat5.png" alt="Portfolio preview 5" class="aspect-[4/3] w-full object-cover cursor-pointer hover:opacity-80 transition-opacity" data-index="4" />
-					<img src="/images/tat6.png" alt="Portfolio preview 6" class="aspect-[4/3] w-full object-cover cursor-pointer hover:opacity-80 transition-opacity" data-index="5" />
+<!-- Gallery Carousel -->
+			<div class="mt-6 flex items-center justify-center gap-4">
+				<!-- Left Arrow -->
+				<button id="carouselPrevBtn" class="flex-shrink-0 bg-white/20 hover:bg-white/40 text-white rounded-full p-3 transition-colors" aria-label="Previous images">
+					<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+					</svg>
+				</button>
+
+				<!-- Carousel Container -->
+				<div class="overflow-hidden flex-1 max-w-6xl">
+					<div id="galleryCarousel" class="flex gap-3 transition-transform duration-300 ease-in-out">
+						<img src="/images/tat1.png" alt="Portfolio preview 1" class="aspect-[4/3] w-1/5 flex-shrink-0 object-cover cursor-pointer hover:opacity-80 transition-opacity" data-index="0" />
+						<img src="/images/tat2.png" alt="Portfolio preview 2" class="aspect-[4/3] w-1/5 flex-shrink-0 object-cover cursor-pointer hover:opacity-80 transition-opacity" data-index="1" />
+						<img src="/images/tat3.png" alt="Portfolio preview 3" class="aspect-[4/3] w-1/5 flex-shrink-0 object-cover cursor-pointer hover:opacity-80 transition-opacity" data-index="2" />
+						<img src="/images/tat4.png" alt="Portfolio preview 4" class="aspect-[4/3] w-1/5 flex-shrink-0 object-cover cursor-pointer hover:opacity-80 transition-opacity" data-index="3" />
+						<img src="/images/tat5.png" alt="Portfolio preview 5" class="aspect-[4/3] w-1/5 flex-shrink-0 object-cover cursor-pointer hover:opacity-80 transition-opacity" data-index="4" />
+						<img src="/images/tat6.png" alt="Portfolio preview 6" class="aspect-[4/3] w-1/5 flex-shrink-0 object-cover cursor-pointer hover:opacity-80 transition-opacity" data-index="5" />
+					</div>
+				</div>
+
+				<!-- Right Arrow -->
+				<button id="carouselNextBtn" class="flex-shrink-0 bg-white/20 hover:bg-white/40 text-white rounded-full p-3 transition-colors" aria-label="Next images">
+					<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+					</svg>
+				</button>
 				</div>
 
 				<!-- Lightbox Modal -->
@@ -183,8 +203,12 @@
 	
 </div>
 		<script>
-			// Lightbox functionality
-			const galleryImages = document.querySelectorAll('#galleryGrid img');
+			// Carousel and Lightbox functionality
+			const carousel = document.getElementById('galleryCarousel');
+			const carouselImages = document.querySelectorAll('#galleryCarousel img');
+			const carouselPrevBtn = document.getElementById('carouselPrevBtn');
+			const carouselNextBtn = document.getElementById('carouselNextBtn');
+			
 			const lightboxModal = document.getElementById('lightboxModal');
 			const lightboxImage = document.getElementById('lightboxImage');
 			const closeModal = document.getElementById('closeModal');
@@ -193,15 +217,41 @@
 			const imageCounter = document.getElementById('imageCounter');
 			const totalImages = document.getElementById('totalImages');
 
-			let currentIndex = 0;
-			const images = Array.from(galleryImages).map(img => img.src);
+			let currentLightboxIndex = 0;
+			let carouselOffset = 0;
+			const imagesPerView = 5;
+			const images = Array.from(carouselImages).map(img => img.src);
+			const maxOffset = Math.max(0, images.length - imagesPerView);
+			
 			totalImages.textContent = images.length;
 
+			// Carousel navigation
+			carouselPrevBtn.addEventListener('click', () => {
+				if (carouselOffset > 0) {
+					carouselOffset--;
+					updateCarouselPosition();
+				}
+			});
+
+			carouselNextBtn.addEventListener('click', () => {
+				if (carouselOffset < maxOffset) {
+					carouselOffset++;
+					updateCarouselPosition();
+				}
+			});
+
+			function updateCarouselPosition() {
+				const imageWidth = 100 / imagesPerView; // Each image is 20% width
+				const gapSize = 0.75; // gap-3 is ~0.75rem, adjust for translation
+				const offset = carouselOffset * (imageWidth + gapSize / 12);
+				carousel.style.transform = `translateX(-${offset}%)`;
+			}
+
 			// Open lightbox on image click
-			galleryImages.forEach((img) => {
+			carouselImages.forEach((img) => {
 				img.addEventListener('click', (e) => {
-					currentIndex = parseInt(e.target.getAttribute('data-index'));
-					showImage(currentIndex);
+					currentLightboxIndex = parseInt(e.target.getAttribute('data-index'));
+					showImage(currentLightboxIndex);
 					lightboxModal.classList.remove('hidden');
 				});
 			});
@@ -212,26 +262,26 @@
 				if (e.target === lightboxModal) closeLightbox();
 			});
 
-			// Navigation
+			// Lightbox navigation
 			prevBtn.addEventListener('click', () => {
-				currentIndex = (currentIndex - 1 + images.length) % images.length;
-				showImage(currentIndex);
+				currentLightboxIndex = (currentLightboxIndex - 1 + images.length) % images.length;
+				showImage(currentLightboxIndex);
 			});
 
 			nextBtn.addEventListener('click', () => {
-				currentIndex = (currentIndex + 1) % images.length;
-				showImage(currentIndex);
+				currentLightboxIndex = (currentLightboxIndex + 1) % images.length;
+				showImage(currentLightboxIndex);
 			});
 
 			// Keyboard navigation
 			document.addEventListener('keydown', (e) => {
 				if (lightboxModal.classList.contains('hidden')) return;
 				if (e.key === 'ArrowLeft') {
-					currentIndex = (currentIndex - 1 + images.length) % images.length;
-					showImage(currentIndex);
+					currentLightboxIndex = (currentLightboxIndex - 1 + images.length) % images.length;
+					showImage(currentLightboxIndex);
 				} else if (e.key === 'ArrowRight') {
-					currentIndex = (currentIndex + 1) % images.length;
-					showImage(currentIndex);
+					currentLightboxIndex = (currentLightboxIndex + 1) % images.length;
+					showImage(currentLightboxIndex);
 				} else if (e.key === 'Escape') {
 					closeLightbox();
 				}
