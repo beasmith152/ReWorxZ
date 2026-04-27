@@ -86,90 +86,29 @@
 				</div>
 			  </nav>
 
-			  <div class="carousel w-full relative">
-				  <!-- Slide 1 content -->
-								<div id="slide1" class="carousel-item relative w-full justify-center">
-									<!-- Stack images vertically using a flex column -->
-									<div class="flex flex-col space-y-6 pt-6 items-center">
-										<img src="/images/Camaro.jpg" class="w-full max-w-screen-lg" />
-										<img src="/images/cm2.jpg" class="w-full max-w-screen-lg pt-6" />
-										<div id="contact" class="flex items-center justify-center pt-1 pb-6"> 
-				<button id="page9" class="bg-transparent hover:bg-yellow-600 text-white font-semibold hover:text-white py-2 px-4 border border-yellow-600 hover:border-transparent rounded">
-					Contact Us for Development
-				  </button>
-				  </div>
-									</div>
-									<!-- 
-									<div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-										<a href="#slide2" class="btn btn-circle">❮</a>
-										<a href="#slide2" class="btn btn-circle">❯</a>
-									</div> -->
-								</div>
-				<!--Slide 2 content -->
-				<div id="slide2" class="carousel-item relative w-full justify-center pt-6">
-					<div class="sketchfab-embed-wrapper flex flex-col space-y-6 pt-6 items-center"> 
-											<iframe
-												title="Livery Mockup ATSV"
-												  frameborder="0"
-												  allowfullscreen
-												allow="autoplay; fullscreen; web-share"
-												width="1080"
-												height="720"
-												src="https://sketchfab.com/models/c0856e18d9fa4d0db9f5b3ea3b27a4a5/embed?autostart=1&preload=1">
-											</iframe>
-												<p id="cmr" class="text-slate-300 text-2xl mb-0">Finished Product coming soon. 12/12/25 </p>
-												<div id="contact" class="flex items-center justify-center pt-1 pb-6"> 
+			 
+	<div id="contact" class="flex items-center justify-center pt-1 pb-6"> 
 				<button id="page10" class="bg-transparent hover:bg-yellow-600 text-white font-semibold hover:text-white py-2 px-4 border border-yellow-600 hover:border-transparent rounded">
 					Contact Us for Development
 				  </button>
-				  </div>
-					</div>
-				  </div>
-							</div>
 
-							<!-- Persistent fixed next/prev buttons anchored to viewport edges -->
-							<a id="carousel-prev1" href="#" aria-label="Previous slide" class="fixed left-6 top-1/2 transform -translate-y-1/2 z-50 btn btn-circle">❮</a>
-							<a id="carousel-next1" href="#" aria-label="Next slide" class="fixed right-6 top-1/2 transform -translate-y-1/2 z-50 btn btn-circle">❯</a>
-
-							<script>
-								// Simple carousel hash toggler for two slides. Adjust logic if you add more slides.
-								(function(){
-									const prev = document.getElementById('carousel-prev1');
-									const next = document.getElementById('carousel-next1');
-									function goTo(hash) { location.hash = hash; }
-									prev.addEventListener('click', function(e){ e.preventDefault(); if(location.hash === '#slide1') goTo('#slide2'); else goTo('#slide1'); });
-									next.addEventListener('click', function(e){ e.preventDefault(); if(location.hash === '#slide1') goTo('#slide2'); else goTo('#slide1'); });
-								})();	
-					document.getElementById('page9').onclick = function() {
-						location.href = '/contact';
-					};
+					<script>
 					document.getElementById('page10').onclick = function() {
 						location.href = '/contact';
 					};
 					</script>
+
+				  </div>
+		</div>
+			</div>
+				</div>
+
+							
 	</div>
 </div>
 	</body>
 	<style>
-	/* Add this style block to your gallery.astro file */
-	@media (max-width: 768px) {
-	  .carousel {
-		padding-top: 4em; /* Adjust the padding value as needed */
-	  }
-
-	  /* On small screens, only show the active slide to prevent overlapping.
-	     Slides are selected by URL hash (:target). When no hash is present,
-	     show the first slide as a sensible default. This keeps desktop
-	     behaviour unchanged and fixes mobile overlap. */
-	  .carousel-item { display: none; }
-	  .carousel-item:target { display: block; }
-	  /* If there's no hash, show the first slide */
-	  .carousel-item:first-of-type { display: block; }
-
-	  /* Ensure images stack cleanly and don't overlap */
-	  .carousel-item img { display:block; width:100%; height:auto; }
-	}
-
+	
   </style>
 </html>
 
