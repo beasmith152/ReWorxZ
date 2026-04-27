@@ -86,12 +86,53 @@
 				</div>
 			  </nav>
 
-			 <div class="flex flex-col items-center justify-center gap-3 pt-1 pb-6">
+			 <section class="mx-auto w-full max-w-7xl px-4 py-8 md:px-8 md:py-10">
+				<div class="grid gap-6 lg:grid-cols-[1.1fr_1fr] lg:items-stretch">
+					<div class="overflow-hidden border border-white/10 bg-black/20">
+						<img
+							src="/images/aboutme.png"
+							alt="Abby Smith"
+							class="h-full min-h-[320px] w-full object-cover md:min-h-[420px]"
+						/>
+					</div>
 
-			 <img src="/images/aboutme.png" alt="Abby Smith" />
-			 <h1 class="text-4xl font-bold text-white">Abby Smith</h1>
+					<div class="flex flex-col justify-center bg-black/20 p-6 text-white md:p-10">
+						<h1 class="font-[Racing_Sans_One] text-4xl uppercase tracking-wide sm:text-5xl md:text-6xl">
+							Abby Smith
+						</h1>
+						<p class="mt-5 font-[Hubot_Sans] text-sm uppercase tracking-[0.22em] text-stone-300">
+							Tattoo Artist
+						</p>
+						<p class="mt-6 max-w-xl font-[Hubot_Sans] text-base leading-8 text-stone-200/90">
+							Abby creates custom traditional and japanese tattoos with a focus on detail, contrast, and lasting readability.
+							From fine-line concepts to larger statement pieces, each design is built around the client and placed
+							with intention. Other services include animation, illustration, livery design, and more. Abby is currently based in Spokane WA
+						</p>
 
-			</div>
+						<div class="mt-8 flex flex-wrap items-center gap-4">
+							<a
+								href="/contact"
+								class="inline-flex items-center gap-3 border border-white/60 px-5 py-3 font-[Hubot_Sans] text-sm uppercase tracking-[0.2em] transition hover:bg-white hover:text-black"
+							>
+								Portfolio
+								<span aria-hidden="true">→</span>
+							</a>
+							<div class="ml-auto flex items-center gap-4 text-sm uppercase tracking-[0.2em] text-stone-300">
+								<a href="https://www.instagram.com" class="transition hover:text-white">IG</a>
+								<a href="https://x.com" class="transition hover:text-white">X</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+					<img src="/images/aboutme.png" alt="Portfolio preview 1" class="aspect-[4/3] w-full object-cover" />
+					<img src="/images/aboutme.png" alt="Portfolio preview 2" class="aspect-[4/3] w-full object-cover" />
+					<img src="/images/aboutme.png" alt="Portfolio preview 3" class="aspect-[4/3] w-full object-cover" />
+					<img src="/images/aboutme.png" alt="Portfolio preview 4" class="aspect-[4/3] w-full object-cover" />
+					<img src="/images/aboutme.png" alt="Portfolio preview 5" class="aspect-[4/3] w-full object-cover" />
+				</div>
+			</section>
 	<div id="contact" class="flex items-center justify-center pt-1 pb-6"> 
 				<button id="page10" class="bg-transparent hover:bg-yellow-600 text-white font-semibold hover:text-white py-2 px-4 border border-yellow-600 hover:border-transparent rounded">
 					Contact Us for Development
