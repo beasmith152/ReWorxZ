@@ -9,7 +9,7 @@ export default {
 				'hero1': "url('https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3JtdGVjdnRtcWgwcGQzNDZkN3ZvN2t0ZnNxaW91Z3FxazQ3NHRvcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ULXAGx1G1LhNJpMKkU/giphy.gif')", 
 			'hero2': "url('/images/bg.png')",
 		'hero3': "url('https://img.freepik.com/free-vector/vintage-flash-tattoos-monochrome-seamless-pattern_225004-1534.jpg?semt=ais_hybrid&w=740&q=80')",
-	'hero4': "url('https://pixelz.cc/wp-content/uploads/2017/11/buddha-meditating-uhd-8k-wallpaper.jpg')",}
+	'hero4': "url('https://www.tattoolife.com/wp-content/uploads/2021/10/TattooLifeTriptych1.jpg')",}
 	},
 	},
 	plugins: [require("tw-elements/plugin.cjs"), require('@tailwindcss/typography'), require('daisyui')],
