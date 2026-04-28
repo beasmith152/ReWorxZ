@@ -91,8 +91,17 @@
                 </figure>
                 <div class="card-body">
                   
-					<h1 class="card-title text-3xl font-bold pt-48">Thank you, your form has been submitted! Expect a response soon.</h1>
-                  </div>
+					<h1 class="card-title text-3xl font-bold pt-48">Thank you, your form has been submitted! Expect a response soon.</h1></br>
+                  <button id="page3" class="bg-transparent hover:bg-yellow-600 text-white font-semibold hover:text-white py-2 px-4 border border-yellow-600 hover:border-transparent rounded">
+					Back to Home
+				  </button>
+
+					<script>
+					document.getElementById('page3').onclick = function() {
+						location.href = '/about';
+					};
+					</script>
+				</div>
                 </div>
               </div>
 			</div>
