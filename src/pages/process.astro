@@ -22,10 +22,63 @@
 		<script>
 			document.addEventListener('DOMContentLoaded', () => {
 				const toggleButton = document.querySelector('[data-collapse-toggle]');
-				const menu = document.getElementById(toggleButton.getAttribute('aria-controls'));
+				const menuId = toggleButton?.getAttribute('aria-controls');
+				const menu = menuId ? document.getElementById(menuId) : null;
 
-				toggleButton.addEventListener('click', () => {
-					menu.classList.toggle('hidden');
+				if (toggleButton && menu) {
+					toggleButton.addEventListener('click', () => {
+						menu.classList.toggle('hidden');
+					});
+				}
+
+				const modal = document.getElementById('image-modal');
+				const modalImage = document.getElementById('modal-image');
+				const closeModalButton = document.getElementById('close-image-modal');
+				const expandableImages = document.querySelectorAll('[data-expandable-image]');
+
+				const openModal = () => {
+					if (!(modal instanceof HTMLElement) || !(modalImage instanceof HTMLImageElement)) return;
+					modal.classList.remove('hidden');
+					modal.classList.add('flex');
+				};
+
+				const closeModal = () => {
+					if (!(modal instanceof HTMLElement)) return;
+					modal.classList.add('hidden');
+					modal.classList.remove('flex');
+				};
+
+				expandableImages.forEach((image) => {
+					if (!(image instanceof HTMLImageElement)) return;
+					image.addEventListener('click', () => {
+						if (!(modalImage instanceof HTMLImageElement)) return;
+						modalImage.src = image.src;
+						modalImage.alt = image.alt;
+						openModal();
+					});
+					image.addEventListener('keydown', (event) => {
+						if (event.key === 'Enter' || event.key === ' ') {
+							event.preventDefault();
+							if (!(modalImage instanceof HTMLImageElement)) return;
+							modalImage.src = image.src;
+							modalImage.alt = image.alt;
+							openModal();
+						}
+					});
+				});
+
+				if (closeModalButton) {
+					closeModalButton.addEventListener('click', closeModal);
+				}
+
+				if (modal) {
+					modal.addEventListener('click', (event) => {
+						if (event.target === modal) closeModal();
+					});
+				}
+
+				document.addEventListener('keydown', (event) => {
+					if (event.key === 'Escape') closeModal();
 				});
 			});
 		</script>
@@ -149,7 +202,7 @@
 									  </span>
 									</summary>
 									<div class="px-6 py-4 text-white text-base leading-relaxed">
-									  <img src="/images/bbp.png" alt="Bloodborne Pathogens certification" class="mb-4 h-28 w-auto object-contain" />
+									  <img src="/images/bbp.png" alt="Bloodborne Pathogens certification" class="mb-4 block h-28 w-auto cursor-zoom-in object-contain mx-auto" data-expandable-image tabindex="0" />
 									  I maintain industry-standard certifications and licenses to ensure quality and compliance. This includes Bloodborne pathogens, WA State Tattoo Artist License, Adobe Industry Certs., IC3 and a Bachelors in Visual Communication Design. I stay current with the latest technologies and best practices through continuous education and professional development.
 									</div>
 								  </details>
@@ -171,15 +224,24 @@
 								</div>
 							  </div>
 
+							  <div id="image-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/85 p-4" aria-hidden="true">
+								<button id="close-image-modal" type="button" class="absolute right-4 top-4 rounded bg-white px-3 py-1 text-sm font-semibold text-black hover:bg-gray-200">Close</button>
+								<img id="modal-image" src="" alt="Expanded image" class="max-h-[90vh] max-w-[92vw] rounded shadow-2xl" />
+							  </div>
+
 					<div id="contact" class="flex items-center justify-center pt-1 pb-6"> 
 				<button id="page2" class="bg-transparent hover:bg-yellow-600 text-white font-semibold hover:text-white py-2 px-4 border border-yellow-600 hover:border-transparent rounded">
 					Contact for Development
 				  </button>
 
 					<script>
-					document.getElementById('page2').onclick = function() {
-						location.href = '/contact';
-					};
+						/** @type {HTMLButtonElement | null} */
+						const contactButton = document.getElementById('page2');
+						if (contactButton) {
+							contactButton.onclick = function() {
+								location.href = '/contact';
+							};
+						}
 					</script>
 
 				  </div>
