@@ -26,8 +26,12 @@
 		<title>About RevWorxZ</title>
 		<script>
 			document.addEventListener('DOMContentLoaded', () => {
-				const toggleButton = document.querySelector('[data-collapse-toggle]');
-				const menu = document.getElementById(toggleButton.getAttribute('aria-controls'));
+        const toggleButton = document.querySelector('[data-collapse-toggle]');
+        if (!toggleButton) return;
+        const menuId = toggleButton.getAttribute('aria-controls');
+        if (!menuId) return;
+        const menu = document.getElementById(menuId);
+        if (!menu) return;
 
 				toggleButton.addEventListener('click', () => {
 					menu.classList.toggle('hidden');
@@ -36,9 +40,10 @@
 		</script>
 	</head>
 
-	<body class="bg-hero4 bg-auto bg-center">
+  <body class="relative min-h-screen overflow-x-hidden">
+    <div class="hero4-bg fixed inset-0 -z-10 bg-hero4 bg-no-repeat bg-center"></div>
 
-		<div class="bg-black h-screen bg-opacity-20">
+    <div class="relative z-10 bg-black h-screen bg-opacity-20">
 
 
 
@@ -123,9 +128,12 @@
   </svg>
 </button>
 				  <script>
-					document.getElementById('page5').onclick = function() {
-						location.href = '/learn';
-					};
+          const page5Button = document.getElementById('page5');
+          if (page5Button) {
+            page5Button.onclick = function() {
+              location.href = '/learn';
+            };
+          }
 					
 					</script>
 </div>
@@ -147,11 +155,25 @@
   #herotext {
     padding-top: .25em;
   }
-  body{
-  background-image: url('smls.jpg');
-  background-repeat: repeat;
-  background-position: center center;
 }
+
+.hero4-bg {
+  background-size: min(92vw, 1200px) auto;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 1024px) {
+  .hero4-bg {
+    background-size: min(120vw, 1000px) auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero4-bg {
+    background-size: min(160vw, 900px) auto;
+    background-position: center 0;
+  }
 }
 /* From Uiverse.io by Li-Deheng */ 
 .button2 {
