@@ -5,9 +5,9 @@
 
 ## Learn More about ReWorxZ
 
-### RevWorxZ is a design powerhouse dedicated to crafting bold, custom racing liveries, team branding, and apparel that make a statement on and off the track. We specialize in creating striking visual identities for motorsports teams, esports leagues, car enthusiasts, and fans who live for the thrill of competition.
+### I explore new forms of expression by learning from the history and traditional techniques of design . Drawing inspiration from visual culture and combining it with modern tools and technologies, I aim to discover new forms of communication.
 
-### From designing one-of-a-kind car wraps to developing sleek, race-inspired clothing lines, RevWorxZ combines cutting-edge technology with a passion for creativity. Our work captures the speed, energy, and individuality of racing culture, delivering designs that leave a lasting impression. At RevWorxZ, we don’t just create designs—we create a lifestyle.
+For me, design is not just about making things look good. I work across various fields and media, from identity, illustration, UI/interactive design, 3D, animation, livery design, and even physical production. I value understanding history, culture, and how people engage with design, and carefully considering every detail to find the most suitable form for my ideas.
 
 ## Sources
 - Google Fonts (googlefonts.com)
